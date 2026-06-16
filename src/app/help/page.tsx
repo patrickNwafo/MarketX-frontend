@@ -134,43 +134,43 @@ export default function HelpPage() {
   });
 
   return (
-    <main className="min-h-screen pt-32 pb-20 px-6 bg-[#050505] text-white">
+    <main className="min-h-screen pt-24 pb-20 px-6 bg-gray-50">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-black tracking-tighter mb-4">
+        <div className="text-center mb-10">
+          <h1 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900 mb-3">
             Help & FAQ
           </h1>
-          <p className="text-neutral-400 text-lg">
+          <p className="text-gray-500 text-base">
             Find answers to common questions about MarketX
           </p>
         </div>
 
         {/* Search */}
-        <div className="mb-8">
+        <div className="mb-6">
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-500" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
               type="text"
               placeholder="Search for help..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+              className="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 text-sm"
             />
           </div>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap gap-3 mb-8">
+        <div className="flex flex-wrap gap-2 mb-6">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
               className={cn(
-                "px-4 py-2 rounded-xl text-sm font-medium transition-all",
+                "px-3 py-1.5 rounded-full text-xs font-bold transition-all",
                 selectedCategory === category
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30"
-                  : "bg-white/5 text-neutral-400 hover:text-white border border-white/10",
+                  ? "bg-emerald-600 text-white"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700",
               )}
             >
               {category}
@@ -179,10 +179,10 @@ export default function HelpPage() {
         </div>
 
         {/* FAQ List */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {filteredFAQs.length === 0 ? (
-            <div className="p-12 bg-white/5 border border-white/10 rounded-3xl text-center">
-              <p className="text-neutral-400">No FAQs match your search.</p>
+            <div className="p-12 bg-white border border-gray-200 rounded-2xl text-center">
+              <p className="text-gray-400">No FAQs match your search.</p>
             </div>
           ) : (
             filteredFAQs.map((faq) => {
@@ -192,30 +192,30 @@ export default function HelpPage() {
                   key={faq.id}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden"
+                  className="bg-white border border-gray-200 rounded-xl overflow-hidden"
                 >
                   <button
                     onClick={() =>
                       setOpenFAQ(openFAQ === faq.id ? null : faq.id)
                     }
-                    className="w-full p-6 flex items-start gap-4 text-left hover:bg-white/5 transition-colors"
+                    className="w-full p-5 flex items-start gap-4 text-left hover:bg-gray-50 transition-colors"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center shrink-0">
-                      <Icon className="w-5 h-5 text-blue-400" />
+                    <div className="w-9 h-9 rounded-lg bg-emerald-50 flex items-center justify-center shrink-0">
+                      <Icon className="w-4 h-4 text-emerald-600" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-start justify-between gap-4">
                         <div>
-                          <span className="text-xs text-blue-400 font-bold uppercase tracking-wider">
+                          <span className="text-[10px] text-emerald-600 font-bold uppercase tracking-wider">
                             {faq.category}
                           </span>
-                          <h3 className="text-lg font-bold text-white mt-1">
+                          <h3 className="text-sm font-bold text-gray-900 mt-0.5">
                             {faq.question}
                           </h3>
                         </div>
                         <ChevronDown
                           className={cn(
-                            "w-5 h-5 text-neutral-400 transition-transform shrink-0",
+                            "w-4 h-4 text-gray-400 transition-transform shrink-0",
                             openFAQ === faq.id && "rotate-180",
                           )}
                         />
@@ -231,8 +231,8 @@ export default function HelpPage() {
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-6 pl-20">
-                          <p className="text-neutral-300 leading-relaxed">
+                        <div className="px-5 pb-5 pl-13">
+                          <p className="text-sm text-gray-600 leading-relaxed">
                             {faq.answer}
                           </p>
                         </div>
@@ -246,15 +246,15 @@ export default function HelpPage() {
         </div>
 
         {/* Contact Support */}
-        <div className="mt-12 p-8 bg-gradient-to-br from-blue-600/10 to-purple-600/10 border border-blue-500/20 rounded-3xl text-center">
-          <h2 className="text-2xl font-black mb-2">Still need help?</h2>
-          <p className="text-neutral-400 mb-6">
+        <div className="mt-10 p-8 bg-emerald-50 border border-emerald-100 rounded-2xl text-center">
+          <h2 className="text-xl font-black text-gray-900 mb-2">Still need help?</h2>
+          <p className="text-gray-500 text-sm mb-5">
             Can&apos;t find what you&apos;re looking for? Reach out to our
             support team.
           </p>
           <a
             href="mailto:support@marketx.com"
-            className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all shadow-lg shadow-blue-600/30"
+            className="inline-block px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-bold transition-colors"
           >
             Contact Support
           </a>

@@ -79,49 +79,49 @@ export default function MarketplaceSection() {
   const activeFiltersCount = Array.from(searchParams.keys()).filter((k) => k !== "q" && k !== "page").length;
 
   return (
-    <section id="explore" className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full min-h-screen flex flex-col">
-      <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
-        <ScrollReveal className="flex flex-col gap-4">
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Marketplace</h2>
-          <p className="text-neutral-400 max-w-xl">
-            {searchParams.get("q") 
+    <section id="explore" className="relative z-10 max-w-7xl mx-auto px-6 py-16 w-full min-h-screen flex flex-col">
+      <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-10">
+        <ScrollReveal className="flex flex-col gap-3">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900">Marketplace</h2>
+          <p className="text-gray-500 max-w-xl">
+            {searchParams.get("q")
               ? `Results for "${searchParams.get("q")}" (${totalCount} total)`
               : "Discover verified assets currently secured in escrow."}
           </p>
         </ScrollReveal>
-        
-        <ScrollReveal delay={0.2} className="w-full md:w-auto flex justify-between items-center bg-white/5 border border-white/10 p-2 rounded-2xl lg:hidden">
-            <button 
+
+        <ScrollReveal delay={0.2} className="w-full md:w-auto flex justify-between items-center bg-white border border-gray-200 p-2 rounded-xl lg:hidden">
+            <button
               onClick={() => setIsMobileFiltersOpen(true)}
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg transition-colors text-sm"
             >
               <Filter className="w-4 h-4" /> Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
             </button>
-            <span className="text-sm font-medium text-neutral-400 px-4">
+            <span className="text-sm font-medium text-gray-400 px-4">
                {`${totalCount} Results`}
             </span>
         </ScrollReveal>
       </div>
 
-      <div className="flex gap-10 flex-grow relative">
-        <FilterSidebar 
+      <div className="flex gap-8 grow relative">
+        <FilterSidebar
           key={searchParams.toString()}
-          isDrawerOpen={isMobileFiltersOpen} 
-          closeDrawer={() => setIsMobileFiltersOpen(false)} 
+          isDrawerOpen={isMobileFiltersOpen}
+          closeDrawer={() => setIsMobileFiltersOpen(false)}
         />
-        
+
         <div className="flex-1 w-full">
           {paginatedAssets.length > 0 ? (
             // Loaded State
             <>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">
                 {paginatedAssets.map((asset, i) => (
                   <AssetCard key={asset.id} asset={asset} delay={Math.min(0.1 * i, 0.5)} />
                 ))}
               </div>
 
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-sm text-neutral-400">
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-sm text-gray-400">
                   Showing {paginatedAssets.length} of {filteredAssets.length} results
                 </p>
                 <div className="flex flex-wrap items-center gap-2">
@@ -129,10 +129,10 @@ export default function MarketplaceSection() {
                     <button
                       key={pageNumber}
                       onClick={() => goToPage(pageNumber)}
-                      className={`rounded-2xl px-4 py-2 text-sm font-semibold transition-all ${
+                      className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition-all ${
                         pageNumber === page
-                          ? "bg-blue-600 text-white"
-                          : "bg-white/5 text-neutral-300 hover:bg-white/10"
+                          ? "bg-emerald-600 text-white"
+                          : "bg-gray-100 text-gray-500 hover:bg-gray-200"
                       }`}
                     >
                       {pageNumber}
@@ -141,7 +141,7 @@ export default function MarketplaceSection() {
                   {hasMore && (
                     <button
                       onClick={() => goToPage(page + 1)}
-                      className="rounded-2xl px-4 py-2 text-sm font-semibold bg-white/10 text-white hover:bg-white/20"
+                      className="rounded-lg px-3 py-1.5 text-sm font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200"
                     >
                       Load more
                     </button>
@@ -151,12 +151,12 @@ export default function MarketplaceSection() {
             </>
           ) : (
             // No Results State
-            <div className="w-full h-96 flex flex-col items-center justify-center bg-white/5 border border-white/10 rounded-[3rem] text-center p-8">
-              <div className="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center mb-6">
-                <SearchX className="w-10 h-10 text-blue-400" />
+            <div className="w-full h-80 flex flex-col items-center justify-center bg-white border border-gray-200 rounded-2xl text-center p-8">
+              <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-5">
+                <SearchX className="w-8 h-8 text-emerald-600" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">No assets found</h3>
-              <p className="text-neutral-400 max-w-md">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">No assets found</h3>
+              <p className="text-gray-400 max-w-md text-sm">
                 We couldn&apos;t find anything matching your current filters and search criteria. Try adjusting your parameters.
               </p>
             </div>

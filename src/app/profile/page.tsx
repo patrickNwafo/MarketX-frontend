@@ -38,30 +38,30 @@ export default function ProfilePage() {
   };
 
   return (
-    <main className="min-h-screen pt-32 pb-20 px-6 bg-[#050505] text-white">
-      <div className="max-w-3xl mx-auto">
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-black tracking-tighter mb-4">
+    <main className="min-h-screen pt-14 pb-20 px-6 bg-gray-50">
+      <div className="max-w-3xl mx-auto py-8">
+        <div className="mb-8">
+          <h1 className="text-3xl font-black tracking-tight text-gray-900 mb-1">
             Profile Settings
           </h1>
-          <p className="text-neutral-400">
+          <p className="text-gray-500">
             Manage your account information and preferences
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {/* Avatar Section */}
-          <div className="p-8 bg-white/5 border border-white/10 rounded-3xl">
-            <h2 className="text-xl font-bold mb-6">Profile Picture</h2>
+          <div className="p-6 bg-white border border-gray-200 rounded-2xl">
+            <h2 className="text-base font-black text-gray-900 mb-4">Profile Picture</h2>
             <AvatarUpload onAvatarChange={setAvatarFile} />
           </div>
 
           {/* Personal Information */}
-          <div className="p-8 bg-white/5 border border-white/10 rounded-3xl space-y-6">
-            <h2 className="text-xl font-bold mb-6">Personal Information</h2>
+          <div className="p-6 bg-white border border-gray-200 rounded-2xl space-y-4">
+            <h2 className="text-base font-black text-gray-900">Personal Information</h2>
 
             <div>
-              <label className="flex items-center gap-2 text-sm font-bold text-neutral-400 mb-2">
+              <label className="flex items-center gap-2 text-xs font-bold text-gray-700 mb-1.5">
                 <User className="w-4 h-4" />
                 Display Name
               </label>
@@ -72,12 +72,12 @@ export default function ProfilePage() {
                   setFormData({ ...formData, name: e.target.value })
                 }
                 placeholder="Enter your name"
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 text-sm"
               />
             </div>
 
             <div>
-              <label className="flex items-center gap-2 text-sm font-bold text-neutral-400 mb-2">
+              <label className="flex items-center gap-2 text-xs font-bold text-gray-700 mb-1.5">
                 <Mail className="w-4 h-4" />
                 Email Address
               </label>
@@ -88,12 +88,12 @@ export default function ProfilePage() {
                   setFormData({ ...formData, email: e.target.value })
                 }
                 placeholder="your@email.com"
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 text-sm"
               />
             </div>
 
             <div>
-              <label className="flex items-center gap-2 text-sm font-bold text-neutral-400 mb-2">
+              <label className="flex items-center gap-2 text-xs font-bold text-gray-700 mb-1.5">
                 <MapPin className="w-4 h-4" />
                 Location
               </label>
@@ -104,12 +104,12 @@ export default function ProfilePage() {
                   setFormData({ ...formData, location: e.target.value })
                 }
                 placeholder="City, Country"
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 text-sm"
               />
             </div>
 
             <div>
-              <label className="text-sm font-bold text-neutral-400 mb-2 block">
+              <label className="text-xs font-bold text-gray-700 mb-1.5 block">
                 Bio
               </label>
               <textarea
@@ -119,7 +119,7 @@ export default function ProfilePage() {
                 }
                 placeholder="Tell us about yourself..."
                 rows={4}
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 resize-none"
+                className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 text-sm resize-none"
               />
             </div>
           </div>
@@ -131,9 +131,9 @@ export default function ProfilePage() {
           {/* Save Button */}
           <button
             onClick={handleSave}
-            className="w-full px-6 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-bold text-lg transition-all shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2"
+            className="w-full px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-sm transition-colors flex items-center justify-center gap-2"
           >
-            <Save className="w-5 h-5" />
+            <Save className="w-4 h-4" />
             Save Changes
           </button>
         </div>

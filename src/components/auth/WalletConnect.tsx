@@ -63,7 +63,7 @@ export default function WalletConnect() {
           <button
             onClick={connect}
             disabled={loading}
-            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white px-5 py-2.5 rounded-2xl transition-all font-medium text-sm shadow-lg shadow-blue-600/20 active:scale-95 border border-white/10"
+            className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white px-4 py-2 rounded-lg transition-colors font-semibold text-sm active:scale-95"
           >
             {loading ? (
               <Loader2 className="w-4 h-4 animate-spin" />
@@ -73,17 +73,17 @@ export default function WalletConnect() {
             Connect Wallet
           </button>
         ) : (
-          <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-2xl backdrop-blur-md">
+          <div className="flex items-center gap-3 bg-white border border-gray-200 px-3 py-1.5 rounded-lg">
             <div className="flex flex-col items-end">
-              <span className="text-[10px] text-neutral-500 font-bold uppercase tracking-wider">Stellar Connected</span>
-              <span className="text-white text-sm font-semibold">{formatAddress(address)}</span>
+              <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Stellar Connected</span>
+              <span className="text-gray-900 text-sm font-semibold">{formatAddress(address)}</span>
             </div>
-            <div className="w-8 h-8 rounded-full bg-linear-to-br from-blue-500 to-purple-600 flex items-center justify-center border border-white/20">
-              <CheckCircle2 className="w-4 h-4 text-white" />
+            <div className="w-7 h-7 rounded-full bg-emerald-100 flex items-center justify-center border border-emerald-200">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
             </div>
             <button
               onClick={() => setShowDisconnectConfirm(true)}
-              className="ml-1 p-1.5 hover:bg-white/10 rounded-lg transition-colors text-neutral-400 hover:text-red-400"
+              className="ml-1 p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-gray-400 hover:text-red-500"
               aria-label="Disconnect wallet"
             >
               <LogOut className="w-4 h-4" />
