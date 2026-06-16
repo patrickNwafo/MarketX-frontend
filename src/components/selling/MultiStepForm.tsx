@@ -98,6 +98,7 @@ export default function MultiStepForm() {
     setIsDeploying(false);
     setIsDeployed(true);
     localStorage.removeItem("marketx_listing_draft");
+    const data = getValues();
     recordActivity({
       type: "listing",
       severity: "success",
