@@ -47,7 +47,7 @@ export default function NotificationPreferencesCard() {
       setLastAction("Notifications enabled");
       toast({
         title: "Push notifications enabled",
-        description: "MarketX can now send browser alerts for order activity.",
+        description: "MarketXpress can now send browser alerts for order activity.",
         variant: "success",
       });
     } catch (error) {
@@ -78,7 +78,7 @@ export default function NotificationPreferencesCard() {
       setLastAction("Test notification sent");
       toast({
         title: "Test notification sent",
-        description: "Check your browser notifications for the MarketX alert.",
+        description: "Check your browser notifications for the MarketXpress alert.",
         variant: "success",
       });
     } catch (error) {

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "MarketX secure P2P marketplace preview";
+export const alt = "MarketXpress secure P2P marketplace preview";
 export const size = {
   width: 1200,
   height: 630,
@@ -50,7 +50,7 @@ export default function Image() {
             >
               M
             </div>
-            MarketX
+            MarketXpress
           </div>
           <div
             style={{

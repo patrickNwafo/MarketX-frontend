@@ -23,9 +23,9 @@ const faqs: FAQItem[] = [
   {
     id: "1",
     category: "Getting Started",
-    question: "What is MarketX?",
+    question: "What is MarketXpress?",
     answer:
-      "MarketX is a decentralized peer-to-peer marketplace built on the Stellar Network. It uses Soroban Smart Contracts to provide secure escrow services, ensuring safe transactions between buyers and sellers without intermediaries.",
+      "MarketXpress is a decentralized peer-to-peer marketplace built on the Stellar Network. It uses Soroban Smart Contracts to provide secure escrow services, ensuring safe transactions between buyers and sellers without intermediaries.",
   },
   {
     id: "2",
@@ -60,14 +60,14 @@ const faqs: FAQItem[] = [
     category: "Payments",
     question: "What cryptocurrencies are supported?",
     answer:
-      "Currently, MarketX supports XLM (Stellar Lumens) as the primary payment method. We're working on adding support for other Stellar-based assets in the future.",
+      "Currently, MarketXpress supports XLM (Stellar Lumens) as the primary payment method. We're working on adding support for other Stellar-based assets in the future.",
   },
   {
     id: "7",
     category: "Payments",
     question: "Are there any fees?",
     answer:
-      "MarketX charges a small platform fee (typically 1-2%) on completed transactions. Additionally, standard Stellar network fees apply (usually less than 0.00001 XLM per transaction).",
+      "MarketXpress charges a small platform fee (typically 1-2%) on completed transactions. Additionally, standard Stellar network fees apply (usually less than 0.00001 XLM per transaction).",
   },
   {
     id: "8",
@@ -88,14 +88,14 @@ const faqs: FAQItem[] = [
     category: "Security",
     question: "Is my wallet secure?",
     answer:
-      "Your wallet keys never leave your device. MarketX uses Freighter Wallet, which stores your private keys locally. We never have access to your funds - all transactions are executed through smart contracts.",
+      "Your wallet keys never leave your device. MarketXpress uses Freighter Wallet, which stores your private keys locally. We never have access to your funds - all transactions are executed through smart contracts.",
   },
   {
     id: "11",
     category: "Security",
     question: "What if I lose access to my wallet?",
     answer:
-      "Always backup your wallet's secret key or recovery phrase. If you lose access, MarketX cannot recover your funds. Store your backup securely offline.",
+      "Always backup your wallet's secret key or recovery phrase. If you lose access, MarketXpress cannot recover your funds. Store your backup securely offline.",
   },
 ];
 

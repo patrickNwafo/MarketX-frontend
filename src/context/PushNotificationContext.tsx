@@ -41,7 +41,7 @@ const PushNotificationContext = createContext<
   PushNotificationContextType | undefined
 >(undefined);
 
-const TEST_NOTIFICATION_TITLE = "MarketX alert";
+const TEST_NOTIFICATION_TITLE = "MarketXpress alert";
 
 function getNotificationBody() {
   return "You have a new marketplace update ready to review.";
