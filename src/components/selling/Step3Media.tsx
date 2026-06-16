@@ -51,7 +51,7 @@ export default function Step3Media() {
     <ScrollReveal className="w-full h-full flex flex-col gap-8 animate-in fade-in slide-in-from-right-4 duration-500">
       <div>
         <h2 className="text-3xl font-black mb-2">Asset Media</h2>
-        <p className="text-neutral-400">High-quality images increase trust and conversions significantly.</p>
+        <p className="text-gray-500">High-quality images increase trust and conversions significantly.</p>
       </div>
 
       <div className="space-y-6 max-w-2xl">
@@ -61,25 +61,25 @@ export default function Step3Media() {
           aria-label="Upload images by dragging and dropping or clicking"
           tabIndex={0}
           className={cn(
-            "border-2 border-dashed rounded-3xl p-12 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300",
+            "border-2 border-dashed rounded-xl p-12 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300",
             isDragActive
-              ? "border-blue-500 bg-blue-500/10 scale-[1.02]"
+              ? "border-emerald-500 bg-emerald-500/10 scale-[1.02]"
               : errors.media
-                ? "border-red-500/50 hover:bg-white/5"
-                : "border-white/10 hover:border-blue-500/50 hover:bg-white/5"
+                ? "border-red-500/50 hover:bg-gray-50"
+                : "border-gray-200 hover:border-emerald-500/50 hover:bg-gray-50"
           )}
         >
           <input {...getInputProps()} aria-label="File upload" />
           <div className={cn(
             "w-20 h-20 rounded-full flex items-center justify-center mb-6 transition-colors duration-300",
-            isDragActive ? "bg-blue-500 text-white shadow-[0_0_30px_rgba(59,130,246,0.5)]" : "bg-white/5 text-neutral-400 shadow-inner"
+            isDragActive ? "bg-emerald-500 text-gray-900 shadow-[0_0_30px_rgba(16,185,129,0.5)]" : "bg-gray-100 text-gray-500 shadow-inner"
           )}>
             <UploadCloud className="w-10 h-10" aria-hidden="true" />
           </div>
-          <h3 className="text-xl font-bold text-white mb-2">
+          <h3 className="text-xl font-bold text-gray-900 mb-2">
             {isDragActive ? "Drop your files here!" : "Drag & drop your images"}
           </h3>
-          <p className="text-neutral-500 text-sm max-w-sm">
+          <p className="text-gray-400 text-sm max-w-sm">
             Supports JPG, PNG, GIF, and WEBP. Maximum file size 5MB. You can upload multiple files at once.
           </p>
         </div>
@@ -89,12 +89,12 @@ export default function Step3Media() {
         {/* Previews Grid */}
         {previews.length > 0 && (
           <div className="space-y-3" aria-label="Uploaded image previews">
-            <h4 className="text-sm font-bold text-neutral-300 uppercase tracking-wider flex items-center gap-2">
-              <ImageIcon className="w-4 h-4 text-blue-400" aria-hidden="true" /> Uploaded Previews ({previews.length})
+            <h4 className="text-sm font-bold text-gray-600 uppercase tracking-wider flex items-center gap-2">
+              <ImageIcon className="w-4 h-4 text-emerald-600" aria-hidden="true" /> Uploaded Previews ({previews.length})
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {previews.map((preview, index) => (
-                <div key={preview.url} className="relative group aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black/50">
+                <div key={preview.url} className="relative group aspect-square rounded-xl overflow-hidden border border-gray-200 bg-gray-100">
                   <Image
                     src={preview.url}
                     alt={`Preview ${index + 1}`}

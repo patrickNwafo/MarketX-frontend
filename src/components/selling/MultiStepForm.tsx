@@ -121,9 +121,9 @@ export default function MultiStepForm() {
       <div className="w-full flex-col flex gap-10">
         {/* Stepper Header */}
         <div className="flex items-center justify-between relative">
-          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -z-10 -translate-y-1/2" />
-          <div 
-            className="absolute top-1/2 left-0 h-0.5 bg-blue-500 -z-10 -translate-y-1/2 transition-all duration-500 ease-out" 
+          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -z-10 -translate-y-1/2" />
+          <div
+            className="absolute top-1/2 left-0 h-0.5 bg-emerald-500 -z-10 -translate-y-1/2 transition-all duration-500 ease-out"
             style={{ width: `${(currentStep / (STEPS.length - 1)) * 100}%` }} 
           />
           
@@ -135,15 +135,15 @@ export default function MultiStepForm() {
               <div key={step.id} className="flex flex-col items-center gap-3 relative">
                 <div className={cn(
                   "w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-500 border-2",
-                  isCompleted ? "bg-blue-600 border-blue-600 text-white" : 
-                  isActive ? "bg-[#050505] border-blue-500 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.3)]" : 
-                  "bg-[#050505] border-white/20 text-neutral-500"
+                  isCompleted ? "bg-emerald-600 border-emerald-600 text-gray-900" :
+                  isActive ? "bg-white border-emerald-500 text-emerald-600 shadow-[0_0_20px_rgba(16,185,129,0.3)]" :
+                  "bg-white border-gray-200 text-gray-400"
                 )}>
                   {isCompleted ? <Check className="w-5 h-5" /> : step.id}
                 </div>
                 <span className={cn(
                   "absolute -bottom-8 w-max text-xs font-bold tracking-widest uppercase transition-colors hidden sm:block",
-                  isActive || isCompleted ? "text-white" : "text-neutral-500"
+                  isActive || isCompleted ? "text-gray-900" : "text-gray-400"
                 )}>
                   {step.title}
                 </span>
@@ -155,7 +155,7 @@ export default function MultiStepForm() {
         <div className="h-8 sm:h-12" /> {/* Spacing underneath stepper */}
 
         {/* Form Content Wrapper */}
-        <form onSubmit={methods.handleSubmit(onSubmit)} className="bg-white/5 border border-white/10 rounded-[3rem] p-8 md:p-12 shadow-2xl relative overflow-hidden flex flex-col min-h-[500px]">
+        <form onSubmit={methods.handleSubmit(onSubmit)} className="bg-gray-50 border border-gray-200 rounded-xl p-8 md:p-12 shadow-2xl relative overflow-hidden flex flex-col min-h-[500px]">
           
           <div className="flex-grow">
             {currentStep === 0 && <Step1Details />}
@@ -166,15 +166,15 @@ export default function MultiStepForm() {
 
           {/* Navigation Footer */}
           {!isDeployed && (
-            <div className="mt-12 flex items-center justify-between border-t border-white/10 pt-8">
+            <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-8">
               <button
                 type="button"
                 onClick={currentStep === 0 ? saveDraft : prevStep}
                 className={cn(
                   "px-6 py-3 rounded-xl font-bold transition-all text-sm flex items-center gap-2",
-                  currentStep === 0 
-                    ? "bg-white/5 hover:bg-white/10 text-neutral-300" 
-                    : "text-neutral-400 hover:text-white"
+                  currentStep === 0
+                    ? "bg-gray-50 hover:bg-gray-100 text-gray-600"
+                    : "text-gray-500 hover:text-gray-900"
                 )}
                 disabled={isDeploying}
               >
@@ -185,7 +185,7 @@ export default function MultiStepForm() {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-500/20 active:scale-95 transition-all text-sm flex items-center gap-2"
+                  className="px-8 py-3 bg-emerald-600 hover:bg-emerald-500 text-gray-900 font-bold rounded-xl shadow-lg shadow-emerald-600/20 active:scale-95 transition-all text-sm flex items-center gap-2"
                 >
                   Continue <ChevronRight className="w-4 h-4" />
                 </button>
@@ -195,9 +195,9 @@ export default function MultiStepForm() {
                   disabled={isDeploying}
                   className={cn(
                     "px-10 py-3 font-black rounded-xl text-sm transition-all shadow-xl active:scale-95 flex items-center gap-2",
-                    isDeploying 
-                      ? "bg-blue-600/50 text-white/50 cursor-not-allowed"
-                      : "bg-white text-black hover:bg-blue-50"
+                    isDeploying
+                      ? "bg-emerald-600/50 text-gray-900/50 cursor-not-allowed"
+                      : "bg-white text-black hover:bg-emerald-50"
                   )}
                 >
                   {isDeploying ? "Deploying..." : "Sign & Deploy"}
