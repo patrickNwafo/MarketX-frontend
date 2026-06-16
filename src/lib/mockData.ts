@@ -136,3 +136,30 @@ export const mockAssets: MockAsset[] = [
     imageFallbackIcon: "Image"
   }
 ];
+
+export interface ProductMock {
+  id: string;
+  name: string;
+  usdPrice: number;
+  originalUsdPrice: number;
+  xlmPrice: number;
+  discountPercent: number;
+  rating: number;
+  reviewCount: number;
+  category: string;
+  seller: string;
+  badge?: "flash" | "new" | "hot";
+}
+
+export const mockProducts: ProductMock[] = [
+  { id: "p1", name: "Samsung Galaxy A55 5G", usdPrice: 299, originalUsdPrice: 459, xlmPrice: 1450, discountPercent: 35, rating: 4.5, reviewCount: 312, category: "Electronics", seller: "TechHub NG", badge: "flash" },
+  { id: "p2", name: "Nike Air Max 270", usdPrice: 88, originalUsdPrice: 110, xlmPrice: 427, discountPercent: 20, rating: 4.7, reviewCount: 198, category: "Fashion", seller: "SoleKing", badge: "hot" },
+  { id: "p3", name: "Sony WH-1000XM5", usdPrice: 193, originalUsdPrice: 350, xlmPrice: 936, discountPercent: 45, rating: 4.8, reviewCount: 540, category: "Electronics", seller: "AudioWorld", badge: "flash" },
+  { id: "p4", name: "Levi's 501 Original Jeans", usdPrice: 45, originalUsdPrice: 60, xlmPrice: 218, discountPercent: 25, rating: 4.3, reviewCount: 87, category: "Fashion", seller: "DenimCo" },
+  { id: "p5", name: "Anker 65W GaN Charger", usdPrice: 28, originalUsdPrice: 40, xlmPrice: 136, discountPercent: 30, rating: 4.6, reviewCount: 231, category: "Electronics", seller: "PowerDeals" },
+  { id: "p6", name: "JBL Flip 6 Speaker", usdPrice: 99, originalUsdPrice: 130, xlmPrice: 480, discountPercent: 24, rating: 4.4, reviewCount: 175, category: "Electronics", seller: "SoundZone", badge: "new" },
+  { id: "p7", name: "Adidas Ultraboost 22", usdPrice: 120, originalUsdPrice: 180, xlmPrice: 582, discountPercent: 33, rating: 4.6, reviewCount: 94, category: "Fashion", seller: "SoleKing" },
+  { id: "p8", name: "Xiaomi Smart Band 9", usdPrice: 35, originalUsdPrice: 50, xlmPrice: 170, discountPercent: 30, rating: 4.2, reviewCount: 412, category: "Electronics", seller: "TechHub NG" },
+  { id: "p9", name: "Legendary NFT #0042", usdPrice: 450, originalUsdPrice: 450, xlmPrice: 2183, discountPercent: 0, rating: 5.0, reviewCount: 12, category: "NFTs", seller: "art_node", badge: "hot" },
+  { id: "p10", name: "iPhone 15 Case (MagSafe)", usdPrice: 19, originalUsdPrice: 25, xlmPrice: 92, discountPercent: 24, rating: 4.1, reviewCount: 63, category: "Electronics", seller: "CaseWorld" },
+];
